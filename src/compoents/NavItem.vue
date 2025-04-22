@@ -5,7 +5,9 @@
       <span>{{ item.name }}</span>
     </RouterLink>
 
-    <el-icon :size="20" class="icon" @click="closeMenu(item)"><Close /></el-icon>
+    <el-icon :size="20" class="icon" @click="closeMenu(item)"
+      ><Close
+    /></el-icon>
   </div>
 </template>
 
@@ -15,17 +17,15 @@ import { RouterLink, useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 const props = defineProps(["item"]);
 const route = useRoute();
-const router=useRouter()
-const store=useStore()
-const closeMenu=(item)=>{
-    const currentPath=route.path
-    const promise= store.dispatch("closeMenuAction",{item,currentPath})
-    promise.then((path)=>{
-        router.push(path)
-        
-    })
-    
-}
+const router = useRouter();
+const store = useStore();
+const closeMenu = (item) => {
+  const currentPath = route.path;
+  const promise = store.dispatch("closeMenuAction", { item, currentPath });
+  promise.then((path) => {
+    router.push(path);
+  });
+};
 </script>
 
 <style lang="less" scoped>
