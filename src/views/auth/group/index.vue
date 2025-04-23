@@ -1,5 +1,5 @@
 <template>
-    <panelHead :title :description/>
+  <panelHead :title :description />
   <el-button icon="Plus" @click="open(null)" type="primary">新增</el-button>
   <el-table :data="tableData.list" style="width: 100%">
     <el-table-column prop="id" label="id" width="180" />
@@ -50,7 +50,7 @@
       </el-form-item>
     </el-form>
     <template #footer><el-button @click="confirm">提交</el-button></template>
-  </el-dialog>  
+  </el-dialog>
 </template>
 
 <script setup>
@@ -122,8 +122,9 @@ const confirm = () => {
 const rules = reactive({
   name: [{ required: true, trigger: "blur", message: "请输入权限名称" }],
 });
-const title='菜单管理'
-const description='菜单规则通常对应一个控制器的方法，同时菜单栏数据也从规则中获取'
+const title = "菜单管理";
+const description =
+  "菜单规则通常对应一个控制器的方法，同时菜单栏数据也从规则中获取";
 </script>
 
 <style lang="less" scoped></style>

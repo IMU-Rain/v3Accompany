@@ -30,3 +30,15 @@ export const updateUser = (data) => {
 export const menuPermissions = () => {
     return request.get('menu/permissions')
 }
+export const companionList=(params)=>{
+    return request.get('companion/list',{params})
+}
+export const photoList=()=>{
+    return request.get('photo/list')
+}
+export const companion=(data)=>{
+    return request.post('companion',data)
+}
+export const deleteCompanion=(data)=>{
+    return request.post('delete/companion',data)
+}

@@ -25,8 +25,7 @@ const closeMenu = (item) => {
   promise.then((path) => {
     router.push(path);
   });
-};
-</script>
+};  </script>
 
 <style lang="less" scoped>
 .container {
