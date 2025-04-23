@@ -1,7 +1,7 @@
 const state = {
     isCollapse: false,
     selectMenu: [],
-    menuActive: '1-1'
+    menuActive: '/dashboard'
 }
 const mutations = {
     collapseMenu(state) {
@@ -14,10 +14,6 @@ const mutations = {
     },
     closeMenu(state, index) {
         state.selectMenu.splice(index, 1)
-    },
-    dynamicMenu(state, payload) {
-        console.log(payload);
-        console.log(import.meta, "");
     },
     updateMenuActive(state, payload) {
         state.menuActive = payload
@@ -35,12 +31,15 @@ const actions = {
                 if (state.state.selectMenu.length === 0) {
                     return "/"
                 } else {
+                    state.commit('updateMenuActive', state.state.selectMenu[0].path)
                     return state.state.selectMenu[0].path
                 }
             } else {
+                state.commit('updateMenuActive', state.state.selectMenu[index - 1].path)
                 return state.state.selectMenu[index - 1].path
             }
         } else {
+            state.commit('updateMenuActive', currentPath)
             return currentPath
         }
     }

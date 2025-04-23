@@ -3,10 +3,9 @@
     active-text-color="#ffd04b"
     background-color="#545c64"
     class="aside-container"
-    default-active="2"
     text-color="#fff"
-    :default-active="active"
     :collapse="isCollapse"
+    :router="true"
   >
     <p class="logo-title" >{{ isCollapse?"DIDI":"DIDI陪诊" }}</p>
     <TreeMenuVue :menuData="menuData"></TreeMenuVue>
@@ -21,9 +20,9 @@ import { useStore } from "vuex";
 const store=useStore()
 const isCollapse=computed(()=>store.state.menu.isCollapse)
 const router = useRouter();
-const menuData = reactive(router.options.routes[0].children);
+const menuData = reactive(router.options.routes[0].children||{});
 
-const active=computed(store.state.menu.menuActive)
+const active=ref(store.state.menu.menuActive)
 
 </script>
 

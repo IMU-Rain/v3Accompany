@@ -1,7 +1,7 @@
 <template>
   <template v-for="item in menuData">
     <el-menu-item
-      :index="nanoid()"
+      :index="item.meta.path"
       v-if="!item.children"
       @click="handleClick(item.meta)"
     >
@@ -24,8 +24,6 @@ import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 const { menuData } = defineProps(["menuData"]);
 const store = useStore();
-console.log(store.state.menu.menuActive);
-
 const router = useRouter();
 const handleClick = (meta) => {
   router.push(meta.path);

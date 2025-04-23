@@ -42,3 +42,6 @@ export const companion=(data)=>{
 export const deleteCompanion=(data)=>{
     return request.post('delete/companion',data)
 }
+export const report=()=>{
+    return request.get('report')
+}
