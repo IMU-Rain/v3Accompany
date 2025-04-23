@@ -108,6 +108,13 @@
       </template>
     </el-table-column>
   </el-table>
+
+  <el-pagination
+    layout="prev, pager, next"
+    class="fr"
+    :total="paginationData.total"
+    :v-model:page-size="paginationData.pageSize"
+  />
 </template>
 
 <script setup>
@@ -167,11 +174,16 @@ const handleClose = () => {
 const paginationData = reactive({
   pageNum: 1,
   pageSize: 10,
+  total: 0,
 });
 const tableData = reactive([]);
 const getCompanionList = () => {
-  companionList(paginationData).then(({ data }) => {
+  companionList({
+    pageNum: paginationData.pageNum,
+    pageSize: paginationData.pageSize,
+  }).then(({ data }) => {
     if (data.code === 10000) {
+      paginationData.total = data.data.total;
       data.data.list.forEach((element) => {
         element.create_time = dayjs(element.create_time).format("YYYY-MM-DD");
         if (element.sex === "1") {

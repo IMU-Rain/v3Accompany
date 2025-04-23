@@ -4,7 +4,6 @@
       ><el-icon size="20px"> <component :is="item.icon"></component> </el-icon>
       <span>{{ item.name }}</span>
     </RouterLink>
-
     <el-icon :size="20" class="icon" @click="closeMenu(item)"
       ><Close
     /></el-icon>
@@ -25,7 +24,8 @@ const closeMenu = (item) => {
   promise.then((path) => {
     router.push(path);
   });
-};  </script>
+};
+</script>
 
 <style lang="less" scoped>
 .container {

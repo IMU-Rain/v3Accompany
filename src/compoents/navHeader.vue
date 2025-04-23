@@ -37,7 +37,7 @@ const logout=()=>{
     router.push('/login')
     localStorage.clear()
 }
-const userInfo=JSON.parse(localStorage.getItem('userInfo'))
+const userInfo=JSON.parse(localStorage.getItem('userInfo')||'')
 
 </script>
 

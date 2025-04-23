@@ -29,13 +29,6 @@
       </template>
     </el-table-column>
   </el-table>
-  <el-pagination
-    layout="prev, pager, next"
-    class="fr"
-    :total="tableData.total"
-    :background="false"
-    :page-size="paginationData.pageSize"
-  />
   <el-dialog
     v-model="dialogFromVisable"
     title="添加权限"
@@ -73,6 +66,7 @@
       ><el-button @click="confirm(formRef)">提交</el-button></template
     >
   </el-dialog>
+  
 </template>
 
 <script setup>
@@ -93,9 +87,9 @@ onMounted(() => {
   menuSelectlist().then(({ data }) => {
     if ((data.code = 10000)) {
       options.value = data.data;
+      getListData();
     }
   });
-  getListData();
 });
 const getListData = () => {
   authAdmin(paginationData).then(({ data }) => {
