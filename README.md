@@ -1,5 +1,5 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+# Vue 3 + Vite + Vuex + Vue-Router + element-plus +axios
+api接口地址：https://apifox.com/apidoc/shared/205c93aa-6b50-4a1a-85be-b93dc5304443 
+视频教程: 【vue项目,vue3项目,vue3项目实战,vue3零基础全栈项目，共49讲全部完结（pc端+移动端+真实业务场景+支付功能+真实接口）】https://www.bilibili.com/video/BV1btdbYkE8E?vd_source=b4c366496d9d998dc58293828271eb3d
+已知BUG: aside无激活, navHeader刷新后消失, 删除陪诊员参数错误
+2025-4-23
